@@ -30,6 +30,7 @@ $result = mysqli_query($db, "SELECT * FROM books");
   <body>
     <h1>Books</h1>
     <div class="container">
+      <a href="add-book.html" class="btn btn-bg-primary">Add new Book</a>
       <table class="table">
         <thead>
           <tr>
