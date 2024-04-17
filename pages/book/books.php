@@ -61,7 +61,7 @@ $result = mysqli_query($db, "SELECT * FROM books");
               </a>
             </td>
             <td>
-              <a href="../services/delete-book.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">
+              <a href="../../services/book/delete-book.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">
                 Delete
               </a>
             </td>

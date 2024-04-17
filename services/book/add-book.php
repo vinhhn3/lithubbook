@@ -27,7 +27,7 @@ $sql = "INSERT INTO books (title, author, price) VALUES ('$title', '$author', '$
 
 if ($db->query($sql)=== TRUE){
   echo "New record created successfully";
-  header('Location: ../pages/books.php');
+  header('Location: ../../pages/book/books.php');
 }
 else {
   echo "Created failed";
