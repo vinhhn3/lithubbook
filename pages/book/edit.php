@@ -46,10 +46,11 @@ if (!$book) {
     <title>Edit Book</title>
 </head>
 <body>
-    <form method="post" action="update-book.php">
+    <form method="post" action="../../services/book/update.php">
         <input type="hidden" name="id" value="<?= htmlspecialchars($book['id']) ?>">
         Title: <input type="text" name="title" value="<?= htmlspecialchars($book['title']) ?>"><br>
         Author: <input type="text" name="author" value="<?= htmlspecialchars($book['author']) ?>"><br>
+        Price: <input type="number" name="price" value="<?= htmlspecialchars($book['price']) ?>"><br>
         <input type="submit" value="Update">
     </form>
 </body>
