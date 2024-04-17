@@ -57,13 +57,13 @@ $result = mysqli_query($db, "SELECT * FROM books");
             </td>
             <td>
               <a
-                href="./edit-book.php?id=<?php echo $row['id']; ?>"
+                href="./edit.php?id=<?php echo $row['id']; ?>"
                 class="btn btn-secondary">
                 Edit
               </a>
             </td>
             <td>
-              <a href="../../services/book/delete-book.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">
+              <a href="../../services/book/delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">
                 Delete
               </a>
             </td>
