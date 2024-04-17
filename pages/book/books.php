@@ -2,7 +2,7 @@
 session_start(); // start a session
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.html'); // redirect to login page if $email is not in the session
+    header('Location: ../user/login.html'); // redirect to login page if $email is not in the session
     exit;
 }
 
@@ -56,7 +56,9 @@ $result = mysqli_query($db, "SELECT * FROM books");
               </a>
             </td>
             <td>
-              <a class="btn btn-secondary">
+              <a
+                href="./edit-book.php?id=<?php echo $row['id']; ?>"
+                class="btn btn-secondary">
                 Edit
               </a>
             </td>
