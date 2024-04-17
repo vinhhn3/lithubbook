@@ -20,10 +20,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="pages/user/login.html">Login</a>
+            <a class="nav-link" href="pages/user/login.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/user/register.html">Register</a>
+            <a class="nav-link" href="pages/user/register.php">Register</a>
           </li>
         </ul>
       </div>
