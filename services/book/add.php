@@ -17,7 +17,7 @@ $db = mysqli_connect('localhost', 'root', '', 'lithubbook');
 
 // Check connection
 if (!$db) {
-    die("Connection failed: " . mysqli_connect_error());
+  die("Connection failed: " . mysqli_connect_error());
 }
 
 // Prepare sql statement
@@ -25,10 +25,9 @@ $sql = "INSERT INTO books (title, author, price) VALUES ('$title', '$author', '$
 
 // Insert book to database
 
-if ($db->query($sql)=== TRUE){
+if ($db->query($sql) === TRUE) {
   echo "New record created successfully";
   header('Location: ../../pages/book/books.php');
-}
-else {
+} else {
   echo "Created failed";
 }

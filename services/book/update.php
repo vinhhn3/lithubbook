@@ -3,26 +3,26 @@
 session_start(); // start a session
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../user/login.html'); // redirect to login page if $email is not in the session
-    exit;
+  header('Location: ../user/login.html'); // redirect to login page if $email is not in the session
+  exit;
 }
 
 if ($_POST['title'] === '' || $_POST['author'] === '' || $_POST['price'] === '') {
-    echo 'Please fill all fields';
-    exit;
+  echo 'Please fill all fields';
+  exit;
 }
 
 $host = 'localhost';
-$db   = 'lithubbook';
+$db = 'lithubbook';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $opt = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
+  PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+  PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+  PDO::ATTR_EMULATE_PREPARES => false,
 ];
 
 $pdo = new PDO($dsn, $user, $pass, $opt);
