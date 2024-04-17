@@ -1,7 +1,7 @@
 <?php
 session_start(); // start a session
 
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['user_id'])) {
     header('Location: login.html'); // redirect to login page if $email is not in the session
     exit;
 }
@@ -38,7 +38,9 @@ $result = mysqli_query($db, "SELECT * FROM books");
             <th scope="col">Title</th>
             <th scope="col">Author</th>
             <th scope="col">Price</th>
-            <th scope="col">Add to Cart</th>
+            <th scope="col">Favorite</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -48,7 +50,21 @@ $result = mysqli_query($db, "SELECT * FROM books");
             <td><?php echo $row['title']; ?></td>
             <td><?php echo $row['author']; ?></td>
             <td><?php echo $row['price']; ?></td>
-            <td><button class="btn btn-primary">Add to Cart</button></td>
+            <td>
+              <a class="btn btn-primary">
+                Add to Favorite
+              </a>
+            </td>
+            <td>
+              <a class="btn btn-secondary">
+                Edit
+              </a>
+            </td>
+            <td>
+              <a href="../services/delete-book.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">
+                Delete
+              </a>
+            </td>
           </tr>
           <?php endwhile; ?>
         </tbody>

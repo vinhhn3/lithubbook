@@ -23,6 +23,7 @@ function login($email, $password) {
     $user = $stmt->fetch();
 
     if ($user) {
+        $_SESSION['user_id'] = $user['id'];
         return true;
     } else {
         return false;
@@ -36,9 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     if (login($email, $password)) {
-        $_SESSION['email'] = $email;
         header('Location: ../pages/books.php');
-        echo 'Login successful';
+
     } else {
         echo 'Invalid email or password';
     }
