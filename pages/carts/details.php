@@ -1,0 +1,1 @@
+<!-- Show the details of a cart -->
