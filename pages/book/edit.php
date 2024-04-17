@@ -50,9 +50,16 @@ if (!$book) {
 <body>
   <form method="post" action="../../services/book/update.php">
     <input type="hidden" name="id" value="<?= htmlspecialchars($book['id']) ?>">
-    Title: <input type="text" name="title" value="<?= htmlspecialchars($book['title']) ?>"><br>
-    Author: <input type="text" name="author" value="<?= htmlspecialchars($book['author']) ?>"><br>
-    Price: <input type="number" name="price" value="<?= htmlspecialchars($book['price']) ?>"><br>
+
+
+    <label>Title: </label>
+    <input type="text" name="title" value="<?= htmlspecialchars($book['title']) ?>"><br>
+
+    <label>Author </label>
+    <input type="text" name="author" value="<?= htmlspecialchars($book['author']) ?>"><br>
+
+    <label>Price:</label>
+    <input type="number" name="price" value="<?= htmlspecialchars($book['price']) ?>"><br>
     <input type="submit" value="Update">
   </form>
 </body>

@@ -40,11 +40,17 @@ $result = mysqli_query($db, "SELECT * FROM favorites WHERE user_id = " . $_SESSI
     <tr>
       <th>User ID</th>
       <th>Book ID</th>
+      <th>Actions</th>
     </tr>
     <?php while ($row = mysqli_fetch_assoc($result)): ?>
       <tr>
         <td><?php echo $row['user_id']; ?></td>
         <td><?php echo $row['book_id']; ?></td>
+        <td>
+          <a href="../../services/favorites/remove.php?book_id=<?php echo $row['book_id'] ?>" class="btn btn-danger">
+            Remove
+          </a>
+        </td>
       </tr>
     <?php endwhile; ?>
   </table>

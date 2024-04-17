@@ -54,7 +54,7 @@ $result = mysqli_query($db, "SELECT * FROM books");
             <td><?php echo $row['author']; ?></td>
             <td><?php echo $row['price']; ?></td>
             <td>
-              <a class="btn btn-primary">
+              <a href="../../services/favorites/add.php?book_id=<?php echo $row['id'] ?>" class="btn btn-primary">
                 Add to Favorite
               </a>
             </td>
