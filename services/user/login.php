@@ -1,5 +1,6 @@
 <?php
-function connectToDatabase() {
+function connectToDatabase()
+{
     $host = 'localhost';
     $db   = 'lithubbook';
     $user = 'root';
@@ -15,7 +16,8 @@ function connectToDatabase() {
     return new PDO($dsn, $user, $pass, $opt);
 }
 
-function login($email, $password) {
+function login($email, $password)
+{
     $pdo = connectToDatabase();
 
     $stmt = $pdo->prepare('SELECT * FROM users WHERE email = ? AND password = ?');
@@ -38,9 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (login($email, $password)) {
         header('Location: ../../pages/book/books.php');
-
     } else {
         echo 'Invalid email or password';
     }
 }
-?>
