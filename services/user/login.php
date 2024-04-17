@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     if (login($email, $password)) {
-        header('Location: ../pages/books.php');
+        header('Location: ../../pages/books.php');
 
     } else {
         echo 'Invalid email or password';
